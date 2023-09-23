@@ -4,5 +4,6 @@
   src: url("fonts/AgaveNerdFontMono-Regular.ttf");
 }
 body, html { 
+  min-width: 800px;
   font-family: Agave;
 }

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Select } from "./Select/Select";
 import { Option } from '../interfaces';
-import { InputNumber } from "./InputNumber/InputNumber";
 import { Button } from "./Button/Button";
 import { CacheTable } from "./CacheTable/CacheTable";
 import CacheSimulation from "../cache_sim/cache";
+import styles from './MainApp.module.css';
+import { Presentation } from "./Presentation/Presentation";
 
 const blocksizeOptions: Option[] = [
     {
@@ -85,66 +86,68 @@ export const MainApp = () => {
 
     return (
         <>
-        {input ? 
-        <div className="flex justify-center items-center h-40 relative z-10">
-                <div className="flex flex-col m-0 space-x-2.5">
-                    <p className="mb-1.5 pl-3">Tamaño de palabra</p>
-                    <Select
-                        placeholder='----'
-                        selected={wordsize}
-                        options={wordsizeOptions}
-                        onChange={(selection: Option) => setWordsize(selection)}
+            {input ?
+                <div className={styles['main-app-component']}>
+                    <div className="flex justify-center items-center h-40 relative z-10">
+                        <div className="flex flex-col m-0 space-x-2.5">
+                            <p className="mb-1.5 pl-3">Tamaño de palabra</p>
+                            <Select
+                                placeholder='----'
+                                selected={wordsize}
+                                options={wordsizeOptions}
+                                onChange={(selection: Option) => setWordsize(selection)}
 
-                    />
+                            />
+                        </div>
+
+                        <div className="flex flex-col m-0 space-x-2.5">
+                            <p className="mb-1.5 pl-3">Tamaño de bloque</p>
+                            <Select
+                                placeholder='----'
+                                selected={blocksize}
+                                options={blocksizeOptions}
+                                onChange={(selection: Option) => setBlocksize(selection)}
+
+                            />
+                        </div>
+
+                        <div className="flex flex-col m-0 space-x-2.5">
+                            <p className="mb-1.5 pl-3">Tamaño de conjunto</p>
+                            <Select
+                                placeholder='----'
+                                selected={groupsize}
+                                options={groupsizeOptions}
+                                onChange={(selection: Option) => setGroupsize(selection)}
+
+                            />
+                        </div>
+
+                        <div className="flex flex-col m-0 space-x-2.5">
+                            <p className="mb-1.5 pl-3">Política de reemplazo</p>
+                            <Select
+                                placeholder='----'
+                                selected={replPolicy}
+                                options={replacementPolicyOptions}
+                                onChange={(selection: Option) => setReplPolicy(selection)}
+
+                            />
+                        </div>
+
+                        <div className="flex flex-col m-0 space-x-2.5">
+                            <span className="mb-1.5 pl-3 pt-6"></span>
+                            <Button
+                                text="Empezar! (click)"
+                                onClick={checkAndSend}
+                            />
+                        </div>
+                    </div>
+                    <Presentation />
                 </div>
-
-                <div className="flex flex-col m-0 space-x-2.5">
-                    <p className="mb-1.5 pl-3">Tamaño de bloque</p>
-                    <Select
-                        placeholder='----'
-                        selected={blocksize}
-                        options={blocksizeOptions}
-                        onChange={(selection: Option) => setBlocksize(selection)}
-
-                    />
-                </div>
-
-                <div className="flex flex-col m-0 space-x-2.5">
-                    <p className="mb-1.5 pl-3">Tamaño de conjunto</p>
-                    <Select
-                        placeholder='----'
-                        selected={groupsize}
-                        options={groupsizeOptions}
-                        onChange={(selection: Option) => setGroupsize(selection)}
-
-                    />
-                </div>
-
-                <div className="flex flex-col m-0 space-x-2.5">
-                    <p className="mb-1.5 pl-3">Política de reemplazo</p>
-                    <Select
-                        placeholder='----'
-                        selected={replPolicy}
-                        options={replacementPolicyOptions}
-                        onChange={(selection: Option) => setReplPolicy(selection)}
-
-                    />
-                </div>
-
-                <div className="flex flex-col m-0 space-x-2.5">
-                <span className="mb-1.5 pl-3 pt-6"></span>
-                <Button
-                    text="Empezar! (click)"
-                    onClick={checkAndSend}
-                />
-            </div>
-                    
-        </div>
                 :
-                <CacheTable cache={cache}/>
+                <CacheTable cache={cache} />
             }
         </>
-        
+
 
     );
 
