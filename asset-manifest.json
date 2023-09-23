@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/cache-simulator/static/css/main.ce9a3326.css",
-    "main.js": "/cache-simulator/static/js/main.25401267.js",
-    "static/js/787.ba365047.chunk.js": "/cache-simulator/static/js/787.ba365047.chunk.js",
-    "static/media/AgaveNerdFontMono-Regular.ttf": "/cache-simulator/static/media/AgaveNerdFontMono-Regular.111c2b44b1e8e97c25aa.ttf",
-    "index.html": "/cache-simulator/index.html",
-    "main.ce9a3326.css.map": "/cache-simulator/static/css/main.ce9a3326.css.map",
-    "main.25401267.js.map": "/cache-simulator/static/js/main.25401267.js.map",
-    "787.ba365047.chunk.js.map": "/cache-simulator/static/js/787.ba365047.chunk.js.map"
+    "main.css": "/Cache-Sim/static/css/main.00dac627.css",
+    "main.js": "/Cache-Sim/static/js/main.d06f7580.js",
+    "static/js/787.ba365047.chunk.js": "/Cache-Sim/static/js/787.ba365047.chunk.js",
+    "static/media/AgaveNerdFontMono-Regular.ttf": "/Cache-Sim/static/media/AgaveNerdFontMono-Regular.111c2b44b1e8e97c25aa.ttf",
+    "index.html": "/Cache-Sim/index.html",
+    "main.00dac627.css.map": "/Cache-Sim/static/css/main.00dac627.css.map",
+    "main.d06f7580.js.map": "/Cache-Sim/static/js/main.d06f7580.js.map",
+    "787.ba365047.chunk.js.map": "/Cache-Sim/static/js/787.ba365047.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce9a3326.css",
-    "static/js/main.25401267.js"
+    "static/css/main.00dac627.css",
+    "static/js/main.d06f7580.js"
   ]
 }
