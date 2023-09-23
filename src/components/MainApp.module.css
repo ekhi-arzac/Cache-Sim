@@ -8,8 +8,45 @@
 }
 
 .main-app-component {
-    opacity: 0;  /* Start as invisible */
-    animation: fadeIn 0.5s ease-in-out forwards;  /* 0.5s can be adjusted to your desired animation duration */
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out forwards;
 }
 
+/* For entry */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
+.main-app-component {
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* For entry */
+.fade-enter {
+  opacity: 0;
+  transform: translateX(100%); /* Start from the right */
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);  /* Move to center */
+  transition: opacity 200ms ease-in-out, transform 500ms ease-in-out;
+}
+
+/* For exit */
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0);  /* Start from center */
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);  /* Move to the left */
+  transition: opacity 200ms ease-in-out, transform 500ms ease-in-out;
+}

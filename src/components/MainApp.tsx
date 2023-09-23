@@ -72,22 +72,31 @@ export const MainApp = () => {
 
     const [input, setInput] = useState<boolean>(true);
     const [cache, setCache] = useState<CacheSimulation | null>(null);
-
+    const [animation, setAnimation] = useState<boolean>(false);
 
     const checkAndSend = () => {
         let areNull: boolean = [blocksize, wordsize, groupsize, replPolicy].some(x => x == null);
+
+ 
+
         if (areNull) {
             alert("Por favor, introduzca todos los parametros.");
             return;
         }
-        setInput(false);
+        setAnimation(true);
+
+        setTimeout(function(){ 
+            setInput(false);
+        }, 250); 
         setCache(new CacheSimulation(Number(wordsize!.value), Number(blocksize!.value), Number(groupsize!.value), Number(replPolicy!.value), mpCapacity));
     }
 
     return (
         <>
-            {input ?
+        <div className={(animation ? styles["fade-exit-active"] : undefined)}>
+            {input ? 
                 <div className={styles['main-app-component']}>
+                    <Presentation />
                     <div className="flex justify-center items-center h-40 relative z-10">
                         <div className="flex flex-col m-0 space-x-2.5">
                             <p className="mb-1.5 pl-3">Tamaño de palabra</p>
@@ -141,11 +150,13 @@ export const MainApp = () => {
                             />
                         </div>
                     </div>
-                    <Presentation />
                 </div>
-                :
-                <CacheTable cache={cache} />
-            }
+                : null}
+             </div>
+
+             <div className={(!animation ? styles["fade-enter"] : styles["fade-enter-active"])}>
+    {!input ? <CacheTable cache={cache} /> : null}
+</div>
         </>
 
 
