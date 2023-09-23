@@ -1,1 +1,0 @@
-Mini proyecto para curso de Arquitectura de Computadores
