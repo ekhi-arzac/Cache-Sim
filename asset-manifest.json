@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1fd6f568.css",
+    "main.js": "/static/js/main.d2f3f468.js",
+    "static/js/787.ba365047.chunk.js": "/static/js/787.ba365047.chunk.js",
+    "static/media/AgaveNerdFontMono-Regular.ttf": "/static/media/AgaveNerdFontMono-Regular.111c2b44b1e8e97c25aa.ttf",
+    "index.html": "/index.html",
+    "main.1fd6f568.css.map": "/static/css/main.1fd6f568.css.map",
+    "main.d2f3f468.js.map": "/static/js/main.d2f3f468.js.map",
+    "787.ba365047.chunk.js.map": "/static/js/787.ba365047.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1fd6f568.css",
+    "static/js/main.d2f3f468.js"
+  ]
+}
